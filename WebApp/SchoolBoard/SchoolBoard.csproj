@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>SchoolBoard.Program</StartupObject>
+    <Authors>Leon Wilzer &amp; Lukas Langrock</Authors>
+    <Company>Pelizaeus Gymnasium</Company>
+    <Version>0.0.1</Version>
+    <Copyright>Leon Wilzer &amp; Lukas Langrock</Copyright>
+    <PackageProjectUrl>https://github.com/Lukas34/SchoolBoard</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Lukas34/SchoolBoard</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <Description>Eone WebApp die den Vertretungsplan auf einem Monitor in der Schule anzeigt.</Description>
+  </PropertyGroup>
+
+
+
+</Project>
