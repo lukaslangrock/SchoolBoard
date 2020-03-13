@@ -9,7 +9,7 @@
     <p>Infoboard vom Pelizaeus Gymnasium für den 01.01.2020</p>
 </div>
 
-@if (false)
+@if (false) // Loading circle
 {
     <div class="text-center">
         <div class="spinner-border" role="status">
@@ -18,7 +18,7 @@
     </div>
 }
 
-@if (true)
+@if (true) // Alerts
 {
     <div class="alert alert-primary" role="alert">
         Die Stufensprecher für die Jahrgangsstufe EF stehen fest! Ihr könnt ab die Liste ab sofort am Stufenboard ansehen.
@@ -27,7 +27,64 @@
     <div class="alert alert-danger" role="alert">
         Aufgrund von Wetterbedingungen potenziell apokalyptischen Ausmaßes <strong>fällt die Exkursion nach Aperture Science der Q1 aus</strong>. Wir bitten um Verständnis.
     </div>
+}
 
+@if (true) // Klausuren
+{
+    <h1>Klausuren</h1>
+    <hr />
+
+    <div class="vtp-table">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Datum</th>
+                    <th scope="col" colspan="5">Montag, 01.01.2020</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">Block</td>
+                    <td colspan="5">JSt EF      GK-Block 01</td>
+                </tr>
+                <tr>
+                    <td scope="row">Kurs</td>
+                    <td>K1G1</td>
+                    <td>K2G2</td>
+                    <td>K3G3</td>
+                    <td>K4G4</td>
+                    <td>K5G5</td>
+                </tr>
+                <tr>
+                    <td scope="row">Fachlehrer</td>
+                    <td>FL1</td>
+                    <td>FL2</td>
+                    <td>FL3</td>
+                    <td>FL4</td>
+                    <td>FL5</td>
+                </tr>
+                <tr>
+                    <td scope="row">Zahl</td>
+                    <td>10</td>
+                    <td>14</td>
+                    <td>12</td>
+                    <td>10</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td scope="row">Raum</td>
+                    <td>A1.11</td>
+                    <td>A2.22</td>
+                    <td colspan="2">A2.13</td>
+                    <td>C0.17</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+
+@if (true) // Vertretungsplan
+{
     <h1>Vertretungsplan</h1>
     <hr />
 
