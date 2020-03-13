@@ -1,0 +1,9 @@
+{
+  "Board": {
+    "Name":  "Unnamed",
+    "Day": "Today",
+    "Alerts": true,
+    "Exams": true,
+    "Representations": true
+  }
+}
