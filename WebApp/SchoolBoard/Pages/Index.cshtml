@@ -1,10 +1,150 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Vertretungsplan - Montag"; //TODO: Add current date to title
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4"><strong>Montag</strong>, 01. Januar</h1>
+    <p>Infoboard vom Pelizaeus Gymnasium für den 01.01.2020</p>
 </div>
+
+@if (false)
+{
+    <div class="text-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+}
+
+@if (true)
+{
+    <div class="alert alert-primary" role="alert">
+        Die Stufensprecher für die Jahrgangsstufe EF stehen fest! Ihr könnt ab die Liste ab sofort am Stufenboard ansehen.
+    </div>
+
+    <div class="alert alert-danger" role="alert">
+        Aufgrund von Wetterbedingungen potenziell apokalyptischen Ausmaßes <strong>fällt die Exkursion nach Aperture Science der Q1 aus</strong>. Wir bitten um Verständnis.
+    </div>
+
+    <h1>Vertretungsplan</h1>
+    <hr />
+
+    <div class="vtp-table">
+        <h3>Lehrer 1</h3>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Stunde</th>
+                    <th scope="col">Kurs</th>
+                    <th scope="col">Vertretender Lehrer</th>
+                    <th scope="col">Raum</th>
+                    <th scope="col">Bemerkung</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1 <span class="badge badge-primary">Neu</span></th>
+                    <td>KURS1</td>
+                    <td>/</td>
+                    <td>A0.00</td>
+                    <td>EVA</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>KURS2</td>
+                    <td>/</td>
+                    <td>A1.11</td>
+                    <td>EVA</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>KURS3</td>
+                    <td>/</td>
+                    <td>A2.22</td>
+                    <td>EVA</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="vtp-table">
+        <h3>Lehrer 2</h3>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Stunde</th>
+                    <th scope="col">Kurs</th>
+                    <th scope="col">Vertretender Lehrer</th>
+                    <th scope="col">Raum</th>
+                    <th scope="col">Bemerkung</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>KURS1</td>
+                    <td>/</td>
+                    <td>A0.00</td>
+                    <td>EVA</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>KURS2</td>
+                    <td>/</td>
+                    <td>A1.11</td>
+                    <td>EVA</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>KURS3</td>
+                    <td>/</td>
+                    <td>A2.22</td>
+                    <td>EVA</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="vtp-table">
+        <h3>Lehrer 3 <span class="badge badge-primary">Neu</span></h3>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Stunde</th>
+                    <th scope="col">Kurs</th>
+                    <th scope="col">Vertretender Lehrer</th>
+                    <th scope="col">Raum</th>
+                    <th scope="col">Bemerkung</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>KURS1</td>
+                    <td>/</td>
+                    <td>A0.00</td>
+                    <td>EVA</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>KURS2</td>
+                    <td>/</td>
+                    <td>A1.11</td>
+                    <td>EVA</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>KURS3</td>
+                    <td>/</td>
+                    <td>A2.22</td>
+                    <td>EVA</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}

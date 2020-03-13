@@ -4,8 +4,12 @@
     ViewData["Title"] = "Error";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h1 class="text-danger">Systemfehler.</h1>
+<h2 class="text-danger">Beim laden des Vertretungsplanes ist ein Problem aufgetreten.</h2>
+<p>
+    Der Vertretungsplan wird alle 15 Minuten aktualisiert.
+    <strong>Bitte gebe eine Lehrkraft bescheid, wenn das Problem nicht innerhalb von 15 Minuten behoben seien sollte.</strong>
+</p>
 
 @if (Model.ShowRequestId)
 {
