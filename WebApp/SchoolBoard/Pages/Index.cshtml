@@ -18,7 +18,7 @@
     </div>
 }
 
-@if (true) // Alerts
+@if (Model.config.Board.Alerts) // Alerts
 {
     <div class="alert alert-primary" role="alert">
         Die Stufensprecher für die Jahrgangsstufe EF stehen fest! Ihr könnt ab die Liste ab sofort am Stufenboard ansehen.
@@ -29,7 +29,7 @@
     </div>
 }
 
-@if (true) // Klausuren
+@if (Model.config.Board.Exams) // Klausuren
 {
     <h1>Klausuren</h1>
     <hr />
@@ -83,7 +83,7 @@
     </div>
 }
 
-@if (true) // Vertretungsplan
+@if (Model.config.Board.Representations) // Vertretungsplan
 {
     <h1>Vertretungsplan</h1>
     <hr />
