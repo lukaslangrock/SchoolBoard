@@ -16,7 +16,9 @@ namespace SchoolBoard
         // Save config to disk
         public static void Save(Config config)
         {
-            string data = JsonSerializer.Serialize<Config>(config);
+            JsonSerializerOptions serializerOptions = new JsonSerializerOptions();
+            serializerOptions.WriteIndented = true; // beautify json
+            string data = JsonSerializer.Serialize<Config>(config, serializerOptions);
             File.WriteAllText("config.json", data);
         }
     }
