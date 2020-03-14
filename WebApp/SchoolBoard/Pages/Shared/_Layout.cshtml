@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@{ Config config = Configuration.Load(); }
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -16,7 +18,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            Infoboard B01 - @System.Runtime.InteropServices.RuntimeInformation.OSDescription - Zuletzt aktulisiert um @DateTime.Now.ToShortTimeString()
+            Infoboard @config.Board.Name - @System.Runtime.InteropServices.RuntimeInformation.OSDescription - Zuletzt aktulisiert um @DateTime.Now.ToShortTimeString()
         </div>
     </footer>
 

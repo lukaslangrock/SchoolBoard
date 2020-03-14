@@ -11,6 +11,7 @@ namespace SchoolBoard.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        public Config config;
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -19,7 +20,7 @@ namespace SchoolBoard.Pages
 
         public void OnGet()
         {
-
+            config = Configuration.Load();
         }
     }
 }
