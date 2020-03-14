@@ -25,4 +25,4 @@ The WebApp is written in C# and is dotnet core based so make sure you have the .
 # Personal usage & Contributions 🧩
 
 Feel free to build something yourself upon this project to suit your needs.
-Pull requests are always welcome to too.
+Pull requests are always welcome too.
