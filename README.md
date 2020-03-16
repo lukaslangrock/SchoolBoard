@@ -22,6 +22,31 @@ The WebApp is written in C# and is dotnet core based so make sure you have the .
 3. Naviagte to the repo and select the `SchoolBoard.sln` solution file inside the `WebApp` folder and wait for it to load.
 4. Click on the button with the green run icon which should say `IIS Express`.
 
+# Configuration ⚙
+
+### Web Interface
+*The web interface is currently in very early stages and does not allow you to edit all settings. Please edit the config.json file instead for the time being.*
+
+1.  Start the WebApp using a method outline earlier.
+2.  Navigate to the WebApp in a browser of your choice and append `/Settings` to the URL *(eg: `localhost:5000/Settings`)*.
+3.  Change the values as needed and save using the blue button at the bottom.
+
+### Config.json for development
+*This includes Visual Studio's IIS server as well as `dotnet run`.*
+
+1.  Open the project folder (`WebApp/SchoolBoard/`).
+2.  Edit the `config.json` file in any text editor.
+    Make sure to use the correct formatting. The app will crash if you store non-valid json code in there.
+3.  Save and just refresh the page (or wait 5 minutes and let the auto refresh to it's thing). All settings can be updated during runtime and do not require a restart.
+
+### Config.json for production
+*This only applies if you have compiled the project using `dotnet build` and execute it by running `dotnet ./SchoolBoard.dll`.*
+
+1.  Open the binary folder for the compiled project. This is usually located in `WebApp/SchoolBoard/bin/Debug/netcoreapp3.1/`.
+2.  Edit the `config.json` file in any text editor.
+    Make sure to use the correct formatting. The app will crash if you store non-valid json code in there.
+3.  Save and just refresh the page (or wait 5 minutes and let the auto refresh to it's thing). All settings can be updated during runtime and do not require a restart.
+
 # Personal usage & Contributions 🧩
 
 Feel free to build something yourself upon this project to suit your needs.
