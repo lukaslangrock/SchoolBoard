@@ -1,0 +1,11 @@
+#! /bin/bash
+# This scrip starts surf and scrolls down to the bottom of the page
+surf -b -K -F github.com/Lukas34/SchoolBoard &
+xte "mousemove 1919 0"
+sleep 3
+xte "mousedown 1"
+for (( c=0; c<1080; c++ ))
+do
+	sleep 0.25
+	xte "mousemove 1920 $c"
+done
