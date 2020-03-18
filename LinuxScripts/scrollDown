@@ -1,0 +1,11 @@
+#! /bin/bash
+# This scrip starts surf and scrolls down to the bottom of the page
+
+xte "mousemove $2 0"
+xte "mousedown 1"
+for (( c=0; c<$3; c++ ))
+do
+	sleep $1
+	xte "mousemove $2 $c"
+done
+xte "mouseup 1"

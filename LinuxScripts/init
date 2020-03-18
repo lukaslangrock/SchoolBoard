@@ -1,0 +1,27 @@
+#! /bin/bash
+URL="github.com/Lukas34/SchoolBoard"
+SPEED=0.25
+WAIT=3
+read RES_X RES_Y <<<$(xdpyinfo | awk -F'[ x]+' '/dimensions:/{print $3, $4}')
+while getopts w:u:s:x:y: option
+do
+case "${option}"
+in
+    w) WAIT=${OPTARG};;
+    u) URL=${OPTARG};;
+    s) SPEED=${OPTARG};;
+    x) RES_X=${OPTARG};;
+    y) RES_Y=${OPTARG};;
+esac
+done
+
+surf -F $URL &
+sleep $WAIT
+
+# Configure the page viewers behaviour below
+while [ true ]
+do
+    ./scrollDown $SPEED $RES_X $RES_Y
+    ./scrollUp $SPEED $RES_X $RES_Y
+    ./reloadPage $WAIT
+done

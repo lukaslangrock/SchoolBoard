@@ -1,0 +1,6 @@
+#! /bin/bash
+
+xte "keydown Control_L"
+xte "key r"
+xte "keyup Control_L"
+sleep $1

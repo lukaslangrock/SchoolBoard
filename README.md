@@ -11,7 +11,7 @@ The Backup solution is written in bash.
 
 1.  Open your favourite terminal.
 2.  Clone the repo and navigate into the projects root folder.
-2.  Run `bash LinuxScripts/scroller`
+2.  Run `bash ./LinuxScripts/init`
 
 ### Vim
 *The project was created using Vim so all tutorials and instructions are based on on Vim and might vary for other editors.*

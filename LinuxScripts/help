@@ -1,0 +1,2 @@
+usage: init [-u <url>] [-s <slowness multiplier>] [-h print this]
+example: init -u github.com/Lukas34/SchoolBoard -s 0.1
