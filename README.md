@@ -3,6 +3,9 @@ Digital Signage WebApp which shows current information about missing classes and
 If you want to use something like this, feel free to fork it and make your own version to suit your needs.
 As this project is for [our school](https://www.pelizaeus.de/) in Germany, the entire UI is in German too.
 
+# Development Server 🌐
+See a preview with demo content of the current build on [schoolboarddev.azurewebsites.net](https://schoolboarddev.azurewebsites.net).
+
 # Build and Develop 🧪
 
 The WebApp is written in C# and is dotnet core based so make sure you have the .NET Core SDK installed. You can get it [here](https://dotnet.microsoft.com/download).
