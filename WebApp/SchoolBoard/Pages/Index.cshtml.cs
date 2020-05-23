@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 
@@ -11,17 +12,18 @@ namespace SchoolBoard.Pages
         public string dateOfYear;
 
         private readonly ILogger<IndexModel> _logger;
-        public Config config;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        private readonly IConfiguration Configuration;
+
+        public IndexModel(ILogger<IndexModel> logger, IConfiguration configuration)
         {
             _logger = logger;
+            Configuration = configuration;
         }
 
         public void OnGet()
         {
-            config = Configuration.Load();
-            switch (config.Board.Day)
+            switch (Configuration["Board:Day"])
             {
                 case "Today":
                     SetDate();

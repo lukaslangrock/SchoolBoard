@@ -1,16 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
 
 namespace SchoolBoard
 {
     public class SettingsModel : PageModel
     {
-        public Config config;
+        private readonly IConfiguration Configuration;
+
+        public SettingsModel(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
 
         public void OnGet()
         {
-            // load config
-            config = Configuration.Load();
+            
         }
 
         [BindProperty]
@@ -18,9 +23,7 @@ namespace SchoolBoard
         public IActionResult OnPost()
         {
             // save new configuration
-            config = Configuration.Load();
-            config.Board.Name = boardName;
-            Configuration.Save(config);
+            //TODO: Implement save mechanics using appsettings.json
 
             // redirect to homepage
             return Redirect("/");

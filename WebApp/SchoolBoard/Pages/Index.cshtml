@@ -1,5 +1,7 @@
 ﻿@page
 @model IndexModel
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
 @{
     ViewData["Title"] = "Vertretungsplan - " + Model.dayOfWeek;
 }
@@ -10,7 +12,7 @@
     @if (Model.dateOfYear != null)
     {
         <h1 class="display-4"><strong>@Model.dayOfWeek</strong>, @Model.dayOfMonth</h1>
-        <p>Infoboard vom Pelizaeus Gymnasium für den @Model.dateOfYear</p>
+        <p>@Configuration["Board:Heading"] für den @Model.dateOfYear</p>
     }
     else
     {
@@ -30,7 +32,7 @@
         </div>
     }
 
-    @if (Model.config.Board.Alerts) // Alerts
+    @if (Convert.ToBoolean(Configuration["Board:Alerts"])) // Alerts
     {
         <div class="alert alert-primary" role="alert">
             Die Stufensprecher für die Jahrgangsstufe EF stehen fest! Ihr könnt heute ab jetzt Liste am Stufenboard ansehen.
@@ -41,7 +43,7 @@
         </div>
     }
 
-    @if (Model.config.Board.Exams) // Klausuren
+    @if (Convert.ToBoolean(Configuration["Board:Exams"])) // Klausuren
     {
         <h2>Klausuren</h2>
         <hr />
@@ -95,7 +97,7 @@
         </div>
     }
 
-    @if (Model.config.Board.Representations) // Vertretungsplan
+    @if (Convert.ToBoolean(Configuration["Board:Representations"])) // Vertretungsplan
     {
         <h2>Vertretungsplan</h2>
         <hr />
