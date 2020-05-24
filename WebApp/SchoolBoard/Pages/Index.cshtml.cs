@@ -42,7 +42,7 @@ namespace SchoolBoard.Pages
             if (addDays != 0) { datetime = datetime.AddDays(addDays); }
             dayOfWeek = datetime.ToString("dddd");
             dayOfMonth = datetime.ToString("dd. MMMM");
-            dateOfYear = datetime.ToShortDateString();
+            dateOfYear = datetime.ToString("dd.MM.yyyy");
         }
     }
 }
