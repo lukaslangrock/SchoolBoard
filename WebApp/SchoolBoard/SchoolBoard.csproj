@@ -13,7 +13,7 @@
     <Description>Eone WebApp die den Vertretungsplan auf einem Monitor in der Schule anzeigt.</Description>
   </PropertyGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties config_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 
 

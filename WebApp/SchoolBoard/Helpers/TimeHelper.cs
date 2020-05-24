@@ -1,0 +1,20 @@
+﻿using System;
+
+namespace SchoolBoard.Helpers
+{
+    public static class TimeHelper
+    {
+        public static DateTime GetUtcTime()
+        {
+            DateTime time = DateTime.UtcNow;
+            return time;
+        }
+
+        public static DateTime GetLocalTime(string timezoneId)
+        {
+            DateTime time = DateTime.UtcNow;
+            time = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(time, timezoneId);
+            return time;
+        }
+    }
+}
