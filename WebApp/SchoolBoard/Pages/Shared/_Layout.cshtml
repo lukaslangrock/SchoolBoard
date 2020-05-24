@@ -19,7 +19,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            Infoboard @Configuration["Board:Name"] - @System.Runtime.InteropServices.RuntimeInformation.OSDescription - Zuletzt aktulisiert um @DateTime.Now.ToShortTimeString()
+            Infoboard @Configuration["Board:Name"] - @System.Runtime.InteropServices.RuntimeInformation.OSDescription - Zuletzt aktulisiert um @Helpers.TimeHelper.GetLocalTime(Configuration["Board:Timezone"])
         </div>
     </footer>
 

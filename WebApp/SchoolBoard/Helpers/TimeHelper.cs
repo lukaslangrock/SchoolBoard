@@ -10,6 +10,7 @@ namespace SchoolBoard.Helpers
             return time;
         }
 
+        // Index of timezones: https://support.microsoft.com/en-gb/help/973627/microsoft-time-zone-index-values
         public static DateTime GetLocalTime(string timezoneId)
         {
             DateTime time = DateTime.UtcNow;
