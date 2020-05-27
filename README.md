@@ -30,11 +30,10 @@ The web interface is currently disabled and might be added later down the line.
 
 ### Configuration file
 1.  Open the project folder `WebApp/SchoolBoard/`.
-2.  Edit the `appsettings.json` file in any text editor.
-    *If you are starting the compiled project from the command line using `dotnet ./SchoolBoard.dll`, your `appsettings.json` file is located in `\WebApp\SchoolBoard\bin\Debug\netcoreapp3.1` or `\WebApp\SchoolBoard\bin\Release\netcoreapp3.1`, depending on your configuration.*
-    
-    Make sure to use the correct formatting. The app might crash if you store non-valid json code in there.
+2.  Edit the `appsettings.json` file in any text editor. Make sure to use the correct formatting. The app might crash if you store non-valid json code in there.
 3.  Save and just refresh the page (or wait 5 minutes and let the auto refresh to it's thing). All settings can be updated during runtime and do not require a restart.
+
+*If you are starting the compiled project from the command line using `dotnet ./SchoolBoard.dll`, your `appsettings.json` file is located in `\WebApp\SchoolBoard\bin\Debug\netcoreapp3.1` or `\WebApp\SchoolBoard\bin\Release\netcoreapp3.1`, depending on your build configuration.*
 
 Btw: Since the configuration is [managed by ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1), you can use the [JSON configuration provider](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1#jcp) for different production and development coonfigurations by creating a new appsettings.`Environment`.json file (e.g. `appsettings.Development.json`) and put in the configuration changes. You can also use environmental variables for the config which override `appsettings.json`.
 
