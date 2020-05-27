@@ -6,6 +6,8 @@ As this project is for [our school](https://www.pelizaeus.de/) in Germany, the e
 # Development Server 🌐
 See a preview with demo content of the current build on [schoolboarddev.azurewebsites.net](https://schoolboarddev.azurewebsites.net).
 
+The development server follows the master branch and automatically updates once commits are pushed. Because it's just a free server, it may take up to 20 seconds for it to respond if it has not been accessed recently.
+
 # Build and Develop 🧪
 
 The WebApp is written in C# and is dotnet core based so make sure you have the .NET Core SDK installed. You can get it [here](https://dotnet.microsoft.com/download).
