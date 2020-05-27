@@ -7,11 +7,9 @@ As this project is for [our school](https://www.pelizaeus.de/) in Germany, the e
 See a preview with demo content of the current build on [schoolboarddev.azurewebsites.net](https://schoolboarddev.azurewebsites.net).
 
 # Build and Develop 🧪
-
 The WebApp is written in C# and is dotnet core based so make sure you have the .NET Core SDK installed. You can get it [here](https://dotnet.microsoft.com/download).
 
 ### Terminal
-
 1.  Open your favourite terminal.
 2.  Clone the repo and navigate into the projects root folder.
 2.  Run `dotnet run --project WebApp/SchoolBoard/SchoolBoard.csproj`.
@@ -28,27 +26,17 @@ The WebApp is written in C# and is dotnet core based so make sure you have the .
 # Configuration ⚙
 
 ### Web Interface
-*The web interface is currently in very early stages and does not allow you to edit all settings. Please edit the config.json file instead for the time being.*
+The web interface is currently disabled and might be added later down the line.
 
-1.  Start the WebApp using a method outline earlier.
-2.  Navigate to the WebApp in a browser of your choice and append `/Settings` to the URL *(eg: `localhost:5000/Settings`)*.
-3.  Change the values as needed and save using the blue button at the bottom.
-
-### Config.json for development
-*This includes Visual Studio's IIS server as well as `dotnet run`.*
-
-1.  Open the project folder (`WebApp/SchoolBoard/`).
-2.  Edit the `config.json` file in any text editor.
-    Make sure to use the correct formatting. The app will crash if you store non-valid json code in there.
+### Configuration file
+1.  Open the project folder `WebApp/SchoolBoard/`.
+2.  Edit the `appsettings.json` file in any text editor.
+    *If you are starting the compiled project from the command line using `dotnet ./SchoolBoard.dll`, your `appsettings.json` file is located in `\WebApp\SchoolBoard\bin\Debug\netcoreapp3.1` or `\WebApp\SchoolBoard\bin\Release\netcoreapp3.1`, depending on your configuration.*
+    
+    Make sure to use the correct formatting. The app might crash if you store non-valid json code in there.
 3.  Save and just refresh the page (or wait 5 minutes and let the auto refresh to it's thing). All settings can be updated during runtime and do not require a restart.
 
-### Config.json for production
-*This only applies if you have compiled the project using `dotnet build` and execute it by running `dotnet ./SchoolBoard.dll`.*
-
-1.  Open the binary folder for the compiled project. This is usually located in `WebApp/SchoolBoard/bin/Debug/netcoreapp3.1/`.
-2.  Edit the `config.json` file in any text editor.
-    Make sure to use the correct formatting. The app will crash if you store non-valid json code in there.
-3.  Save and just refresh the page (or wait 5 minutes and let the auto refresh to it's thing). All settings can be updated during runtime and do not require a restart.
+Btw: Since the configuration is [managed by ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1), you can use the [JSON configuration provider](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1#jcp) for different production and development coonfigurations by creating a new appsettings.`Environment`.json file (e.g. `appsettings.Development.json`) and put in the configuration changes. You can also use environmental variables for the config which override `appsettings.json`.
 
 # Personal usage & Contributions 🧩
 
