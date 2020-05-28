@@ -21,7 +21,7 @@
         @if (Convert.ToBoolean(Configuration["Board:ShowOSInfo"]))
         {
             <div class="container">
-                Infoboard @Configuration["Board:Name"] - @System.Runtime.InteropServices.RuntimeInformation.OSDescription - Zuletzt aktulisiert um @Helpers.TimeHelper.GetLocalTime(Configuration["Board:Timezone"])
+                Infoboard @Configuration["Board:Name"] - @System.Runtime.InteropServices.RuntimeInformation.OSDescription - Zuletzt aktulisiert um @Helpers.TimeHelper.GetLocalTime(Configuration["Board:Timezone"]).ToString("HH:mm:ss")
             </div>
         }
         else
