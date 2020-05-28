@@ -18,9 +18,18 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            Infoboard @Configuration["Board:Name"] - @System.Runtime.InteropServices.RuntimeInformation.OSDescription - Zuletzt aktulisiert um @Helpers.TimeHelper.GetLocalTime(Configuration["Board:Timezone"])
-        </div>
+        @if (Convert.ToBoolean(Configuration["Board:ShowOSInfo"]))
+        {
+            <div class="container">
+                Infoboard @Configuration["Board:Name"] - @System.Runtime.InteropServices.RuntimeInformation.OSDescription - Zuletzt aktulisiert um @Helpers.TimeHelper.GetLocalTime(Configuration["Board:Timezone"])
+            </div>
+        }
+        else
+        {
+            <div class="container">
+                Infoboard @Configuration["Board:Name"] - Zuletzt aktulisiert um @Helpers.TimeHelper.GetLocalTime(Configuration["Board:Timezone"])
+            </div>
+        }
     </footer>
 
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
