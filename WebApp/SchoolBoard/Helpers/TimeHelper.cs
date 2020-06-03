@@ -11,7 +11,7 @@ namespace SchoolBoard.Helpers
             return time;
         }
 
-        // Timezone in appsettings.json can be either a Windors or IANA (used by Unix systems)
+        // Timezone value in appsettings.json can be either in Windows or IANA (used by Unix systems) format
         public static DateTime GetLocalTime(string timezoneId)
         {
             DateTime datetime = DateTime.UtcNow;
