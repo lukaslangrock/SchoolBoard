@@ -3,6 +3,8 @@ Digital Signage WebApp which shows current information about missing classes and
 If you want to use something like this, feel free to fork it and make your own version to suit your needs.
 As this project is for [our school](https://www.pelizaeus.de/) in Germany, the entire UI is in German too.
 
+Please visit the [wiki](https://github.com/Lukas34/SchoolBoard/wiki) for detailed guides, instructions and other resources.
+
 # Development Server 🌐
 See a preview with demo content of the current build on [schoolboarddev.azurewebsites.net](https://schoolboarddev.azurewebsites.net).
 
@@ -32,6 +34,8 @@ The web interface is currently disabled and might be added later down the line.
 1.  Open the project folder `WebApp/SchoolBoard/`.
 2.  Edit the `appsettings.json` file in any text editor. Make sure to use the correct formatting. The app might crash if you store non-valid json code in there.
 3.  Save and just refresh the page (or wait 5 minutes and let the auto refresh to it's thing). All settings can be updated during runtime and do not require a restart.
+
+[How to configure the appsettings.json file](https://github.com/Lukas34/SchoolBoard/wiki/Configure-appsettings.json).
 
 *If you are starting the compiled project from the command line using `dotnet ./SchoolBoard.dll`, your `appsettings.json` file is located in `\WebApp\SchoolBoard\bin\Debug\netcoreapp3.1` or `\WebApp\SchoolBoard\bin\Release\netcoreapp3.1`, depending on your build configuration.*
 
