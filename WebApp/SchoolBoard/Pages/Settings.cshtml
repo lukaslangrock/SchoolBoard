@@ -1,97 +1,16 @@
 ﻿@page
 @model SchoolBoard.SettingsModel
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
 @{
     ViewData["Title"] = "Einstellungen";
 }
 
 <h1>Einstellungen</h1>
 
-<form method="post">
-    <div class="form-group">
-        <label for="boardName">Board Name</label>
-        <input asp-for="boardName" type="text" class="form-control" id="boardName" value="@Model.config.Board.Name">
-    </div>
-    <div class="form-group">
-        <label for="boardDay">Auswahl des Tages</label>
-        <select class="form-control" id="boardDay" aria-describedby="boardDayHelp" disabled>
-            @if (Model.config.Board.Day == "Today")
-            {
-                <option selected="selected">Heute</option>
-            }
-            else
-            {
-                <option>Heute</option>
-            }
-            @if (Model.config.Board.Day == "Tomorrow")
-            {
-                <option selected="selected">Morgen</option>
-            }
-            else
-            {
-                <option>Morgen</option>
-            }
-            @if (Model.config.Board.Day == "None")
-            {
-                <option selected="selected">Keiner</option>
-            }
-            else
-            {
-                <option>Keiner</option>
-            }
-        </select>
-        <small id="boardDayHelp" class="form-text text-muted">Zeiten sind relativ zum aktuellen Tag. Die Option <i>Keiner</i> wird das Board deaktivieren.</small>
-    </div>
+<p>
+    The settings page is currently disabled while the new configuration provider is being implemented.
+    Stay tuned or future updates / commits.
+</p>
 
-    <div class="form-group">
-        <div class="custom-control custom-switch">
-            @if (Model.config.Board.Alerts)
-            {
-                <input type="checkbox" class="custom-control-input" id="boardAlerts" checked disabled>
-            }
-            else
-            {
-                <input type="checkbox" class="custom-control-input" id="boardAlerts" disabled>
-            }
-            <label class="custom-control-label" for="boardAlerts">Alarme und Benachrichtigungen anzeigen</label>
-        </div>
-
-        <div class="custom-control custom-switch">
-            @if (Model.config.Board.Exams)
-            {
-                <input type="checkbox" class="custom-control-input" id="boardExams" checked disabled>
-            }
-            else
-            {
-                <input type="checkbox" class="custom-control-input" id="boardExams" disabled>
-            }
-            <label class="custom-control-label" for="boardExams">Klausurtabellen anzeigen</label>
-        </div>
-
-        <div class="custom-control custom-switch">
-            @if (Model.config.Board.Representations)
-            {
-                <input type="checkbox" class="custom-control-input" id="boardRepresentations" checked disabled>
-            }
-            else
-            {
-                <input type="checkbox" class="custom-control-input" id="boardRepresentations" disabled>
-            }
-            <label class="custom-control-label" for="boardRepresentations">Vertretungsplan anzeigen</label>
-        </div>
-    </div>
-
-    <div class="settings-control">
-        <button type="submit" class="btn btn-primary settings-control-element" onclick="showLoader()">Einstellungen speichern</button>
-        <button type="submit" class="btn btn-outline-danger settings-control-element" onclick="showLoader()">Auf Werkseinstellungen stellen</button>
-        <div class="spinner-border settings-control-spinner settings-control-element" id="spinner" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-
-        <script>
-            function showLoader() {
-                var div = document.getElementById("spinner");
-                div.style.display = div.style.display = "inline-block";
-            }
-        </script>
-    </div>
-</form>
+<button class="btn btn-primary" onclick="location.href='/';">Return to home</button>
