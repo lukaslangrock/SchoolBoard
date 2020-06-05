@@ -23,14 +23,14 @@
         @if (Convert.ToBoolean(Configuration["Board:ShowOSInfo"]))
         {
             <div class="container">
-                Infoboard @Configuration["Board:Name"] - @System.Runtime.InteropServices.RuntimeInformation.OSDescription - @Localizer["Helper.LastRefresh"] @Helpers.TimeHelper.GetLocalTime(Configuration["Board:Timezone"]).ToString("HH:mm:ss")
+                Infoboard @Configuration["Board:Name"] - @System.Runtime.InteropServices.RuntimeInformation.OSDescription - @Localizer["Helper.LastRefresh"] @Helpers.TimeHelper.GetLocalTime(Configuration["Board:Timezone"])
             </div>
         }
         else
         {
-    <div class="container">
-        Infoboard @Configuration["Board:Name"] - @Localizer["Helper.LastRefresh"] @Helpers.TimeHelper.GetLocalTime(Configuration["Board:Timezone"])
-    </div>
+            <div class="container">
+                Infoboard @Configuration["Board:Name"] - @Localizer["Helper.LastRefresh"] @Helpers.TimeHelper.GetLocalTime(Configuration["Board:Timezone"])
+            </div>
         }
     </footer>
 
