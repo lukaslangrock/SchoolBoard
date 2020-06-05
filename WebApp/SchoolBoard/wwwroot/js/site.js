@@ -2,5 +2,3 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
-
-//TODO: Auto refresh every 5 minutes
