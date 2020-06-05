@@ -1,9 +1,11 @@
 ﻿@page
 @model IndexModel
 @using Microsoft.Extensions.Configuration
+@using Microsoft.AspNetCore.Mvc.Localization
 @inject IConfiguration Configuration
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Vertretungsplan - " + Model.dayOfWeek;
+    ViewData["Title"] = Model.dayOfWeek;
 }
 
 <meta http-equiv="refresh" content="300">
@@ -12,12 +14,12 @@
     @if (Model.dateOfYear != null)
     {
         <h1 class="display-4"><strong>@Model.dayOfWeek</strong>, @Model.dayOfMonth</h1>
-        <p>@Configuration["Board:Heading"] für den @Model.dateOfYear</p>
+        <p>@Configuration["Board:Heading"] @Localizer["Helper.ForDate"] @Model.dateOfYear</p>
     }
     else
     {
-        <h1 class="text-danger">Bildschirm Inaktiv</h1>
-        <p class="text-danger">Dieses Infoboard wurde vom Systemverwalter deaktiviert.</p>
+        <h1 class="text-danger">@Localizer["Inactive.Title"]</h1>
+        <p class="text-danger">@Localizer["Inactive.Description"]</p>
     }
 </div>
 
@@ -45,7 +47,7 @@
 
     @if (Convert.ToBoolean(Configuration["Board:Exams"])) // Klausuren
     {
-        <h2>Klausuren</h2>
+        <h2>@Localizer["Exams.Title"]</h2>
         <hr />
 
         <div class="vtp-table">
@@ -99,7 +101,7 @@
 
     @if (Convert.ToBoolean(Configuration["Board:Representations"])) // Vertretungsplan
     {
-        <h2>Vertretungsplan</h2>
+        <h2>@Localizer["Representations.Title"]</h2>
         <hr />
 
         <div class="vtp-table">
@@ -117,7 +119,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1 <span class="badge badge-primary">Neu</span></th>
+                        <th scope="row">1 <span class="badge badge-primary">@Localizer["Helper.New"]</span></th>
                         <td>KURS1</td>
                         <td>/</td>
                         <td>A0.00</td>
@@ -181,7 +183,7 @@
         </div>
 
         <div class="vtp-table">
-            <h4>Lehrer 3 <span class="badge badge-primary">Neu</span></h4>
+            <h4>Lehrer 3 <span class="badge badge-primary">@Localizer["Helper.New"]</span></h4>
 
             <table class="table table-sm table-bordered table-striped">
                 <thead>

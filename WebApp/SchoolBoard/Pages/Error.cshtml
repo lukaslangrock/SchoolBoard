@@ -1,14 +1,16 @@
 ﻿@page
 @model ErrorModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Error";
 }
 
-<h1 class="text-danger">Infoboard konnte nicht geladen werden!</h1>
+<h1 class="text-danger">@Localizer["Page.Title"]</h1>
 <p>
-    Es gab ein internes Problem beim Laden dieser Seite.
-    <br />Infoboards werden automatisch alle 5 Minuten aktualisiert, wobei temporäre Probleme behoben werden sollten.
-    <br /><strong>Bitte gebe einer Lehrkraft bescheid, wenn das Problem nicht innerhalb von 5 Minuten behoben seien sollte.</strong>
+    @Localizer["Page.Line1"]
+    <br />@Localizer["Page.Line2"]
+    <br /><strong>@Localizer["Page.Line3"]</strong>
 </p>
 
 @if (Model.ShowRequestId)
