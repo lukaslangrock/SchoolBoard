@@ -11,6 +11,7 @@ namespace SchoolBoard.Models
     {
         public string message { get; set; }
 
+        // types are the names of bootstrap alert classes (https://getbootstrap.com/docs/4.0/components/alerts/)
         public string type { get; set; }
     }
 }
