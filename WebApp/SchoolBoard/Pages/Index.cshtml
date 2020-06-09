@@ -53,47 +53,47 @@
             @foreach (var table in Model.exams.examTables)
             {
                 <table class="table table-sm table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Datum</th>
-                        <th scope="col" colspan="5">@Model.dayOfWeek, @Model.dateOfYear</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td scope="row">Block</td>
-                        <td colspan="5">@table.block</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Kurs</td>
-                        @foreach (var examClass in table.classes)
-                        {
-                            <td>@examClass.name</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td scope="row">Fachlehrer</td>
-                        @foreach (var examClass in table.classes)
-                        {
-                            <td>@examClass.teacher</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td scope="row">Zahl</td>
-                        @foreach (var examClass in table.classes)
-                        {
-                            <td>@examClass.count</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td scope="row">Raum</td>
-                        @foreach (var examClass in table.classes)
-                        {
-                            <td>@examClass.room</td>
-                        }
-                    </tr>
-                </tbody>
-            </table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Datum</th>
+                            <th scope="col" colspan="5">@Model.dayOfWeek, @Model.dateOfYear</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">Block</td>
+                            <td colspan="5">@table.block</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Kurs</td>
+                            @foreach (var examClass in table.classes)
+                            {
+                                <td>@examClass.name</td>
+                            }
+                        </tr>
+                        <tr>
+                            <td scope="row">Fachlehrer</td>
+                            @foreach (var examClass in table.classes)
+                            {
+                                <td>@examClass.teacher</td>
+                            }
+                        </tr>
+                        <tr>
+                            <td scope="row">Zahl</td>
+                            @foreach (var examClass in table.classes)
+                            {
+                                <td>@examClass.count</td>
+                            }
+                        </tr>
+                        <tr>
+                            <td scope="row">Raum</td>
+                            @foreach (var examClass in table.classes)
+                            {
+                                <td>@examClass.room</td>
+                            }
+                        </tr>
+                    </tbody>
+                </table>
             }
         </div>
     }
@@ -109,30 +109,30 @@
                 <h4>@table.name</h4>
 
                 <table class="table table-sm table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Stunde</th>
-                        <th scope="col">Kurs</th>
-                        <th scope="col">Vertretender Lehrer</th>
-                        <th scope="col">Raum</th>
-                        <th scope="col">Bemerkung</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var teacherHour in table.hours)
-                    {
+                    <thead>
                         <tr>
-                            <th scope="row">@teacherHour.hour</th>
-                            <td>@teacherHour.className</td>
-                            <td>@teacherHour.representingTeacherName</td>
-                            <td>@teacherHour.room</td>
-                            <td>@teacherHour.note</td>
+                            <th scope="col">Stunde</th>
+                            <th scope="col">Kurs</th>
+                            <th scope="col">Vertretender Lehrer</th>
+                            <th scope="col">Raum</th>
+                            <th scope="col">Bemerkung</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var teacherHour in table.hours)
+                        {
+                            <tr>
+                                <th scope="row">@teacherHour.hour</th>
+                                <td>@teacherHour.className</td>
+                                <td>@teacherHour.representingTeacherName</td>
+                                <td>@teacherHour.room</td>
+                                <td>@teacherHour.note</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
             }
-            
+
         </div>
     }
 }
