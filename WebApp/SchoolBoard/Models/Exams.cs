@@ -11,10 +11,10 @@ namespace SchoolBoard.Models
     {
         public string block { get; set; }
 
-        public List<Class> classes { get; set; }
+        public List<ExamClass> classes { get; set; }
     }
 
-    public class Class
+    public class ExamClass
     {
         public string name { get; set; }
 
