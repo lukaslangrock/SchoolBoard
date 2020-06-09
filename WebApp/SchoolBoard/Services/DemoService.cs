@@ -95,7 +95,7 @@ namespace SchoolBoard.Services
                         {
                             hour = hourCounter,
                             className = "KURS" + hourCounter,
-                            representingTeacherName = "/",
+                            substituteTeacherName = "/",
                             room = "A" + rnd.Next(1, 3) + "." + rnd.Next(0, 3) + rnd.Next(1, 3),
                             note = "EVA"
                         }

@@ -55,38 +55,38 @@
                 <table class="table table-sm table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Datum</th>
+                            <th scope="col">@Localizer["Exams.Date"]</th>
                             <th scope="col" colspan="5">@Model.dayOfWeek, @Model.dateOfYear</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td scope="row">Block</td>
+                            <td scope="row">@Localizer["Exams.Block"]</td>
                             <td colspan="5">@table.block</td>
                         </tr>
                         <tr>
-                            <td scope="row">Kurs</td>
+                            <td scope="row">@Localizer["Exams.Class"]</td>
                             @foreach (var examClass in table.classes)
                             {
                                 <td>@examClass.name</td>
                             }
                         </tr>
                         <tr>
-                            <td scope="row">Fachlehrer</td>
+                            <td scope="row">@Localizer["Exams.Teacher"]</td>
                             @foreach (var examClass in table.classes)
                             {
                                 <td>@examClass.teacher</td>
                             }
                         </tr>
                         <tr>
-                            <td scope="row">Zahl</td>
+                            <td scope="row">@Localizer["Exams.Count"]</td>
                             @foreach (var examClass in table.classes)
                             {
                                 <td>@examClass.count</td>
                             }
                         </tr>
                         <tr>
-                            <td scope="row">Raum</td>
+                            <td scope="row">@Localizer["Exams.Room"]</td>
                             @foreach (var examClass in table.classes)
                             {
                                 <td>@examClass.room</td>
@@ -111,11 +111,11 @@
                 <table class="table table-sm table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Stunde</th>
-                            <th scope="col">Kurs</th>
-                            <th scope="col">Vertretender Lehrer</th>
-                            <th scope="col">Raum</th>
-                            <th scope="col">Bemerkung</th>
+                            <th scope="col">@Localizer["Representations.Hour"]</th>
+                            <th scope="col">@Localizer["Representations.Class"]</th>
+                            <th scope="col">@Localizer["Representations.SubstituteTeacher"]</th>
+                            <th scope="col">@Localizer["Representations.Room"]</th>
+                            <th scope="col">@Localizer["Representations.Note"]</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -124,7 +124,7 @@
                             <tr>
                                 <th scope="row">@teacherHour.hour</th>
                                 <td>@teacherHour.className</td>
-                                <td>@teacherHour.representingTeacherName</td>
+                                <td>@teacherHour.substituteTeacherName</td>
                                 <td>@teacherHour.room</td>
                                 <td>@teacherHour.note</td>
                             </tr>
