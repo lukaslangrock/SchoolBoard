@@ -20,7 +20,7 @@ namespace SchoolBoard.Models
 
         public string className { get; set; }
 
-        public string representingTeacherName { get; set; }
+        public string substituteTeacherName { get; set; }
 
         public string room { get; set; }
 
