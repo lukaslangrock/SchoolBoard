@@ -11,10 +11,10 @@ namespace SchoolBoard.Models
     {
         public string name { get; set; }
 
-        public List<Hour> hours { get; set; }
+        public List<TeacherHour> hours { get; set; }
     }
 
-    public class Hour
+    public class TeacherHour
     {
         public int hour { get; set; }
 

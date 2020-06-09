@@ -36,13 +36,12 @@
 
     @if (Convert.ToBoolean(Configuration["Board:Alerts"])) // Alerts
     {
-        <div class="alert alert-primary" role="alert">
-            Die Stufensprecher für die Jahrgangsstufe EF stehen fest! Ihr könnt heute ab jetzt Liste am Stufenboard ansehen.
-        </div>
-
-        <div class="alert alert-danger" role="alert">
-            Aufgrund von Wetterbedingungen potenziell apokalyptischen Ausmaßes <strong>fällt die Exkursion nach Aperture Science der Q1 aus</strong>. Wir bitten um Verständnis.
-        </div>
+        @foreach (var item in Model.alerts.alertMessages)
+        {
+            <div class="alert alert-@item.type" role="alert">
+                @item.message
+            </div>
+        }
     }
 
     @if (Convert.ToBoolean(Configuration["Board:Exams"])) // Klausuren
@@ -51,7 +50,9 @@
         <hr />
 
         <div class="vtp-table">
-            <table class="table table-sm table-bordered table-striped">
+            @foreach (var table in Model.exams.examTables)
+            {
+                <table class="table table-sm table-bordered table-striped">
                 <thead>
                     <tr>
                         <th scope="col">Datum</th>
@@ -61,41 +62,39 @@
                 <tbody>
                     <tr>
                         <td scope="row">Block</td>
-                        <td colspan="5">JSt EF      GK-Block 01</td>
+                        <td colspan="5">@table.block</td>
                     </tr>
                     <tr>
                         <td scope="row">Kurs</td>
-                        <td>K1G1</td>
-                        <td>K2G2</td>
-                        <td>K3G3</td>
-                        <td>K4G4</td>
-                        <td>K5G5</td>
+                        @foreach (var examClass in table.classes)
+                        {
+                            <td>@examClass.name</td>
+                        }
                     </tr>
                     <tr>
                         <td scope="row">Fachlehrer</td>
-                        <td>FL1</td>
-                        <td>FL2</td>
-                        <td>FL3</td>
-                        <td>FL4</td>
-                        <td>FL5</td>
+                        @foreach (var examClass in table.classes)
+                        {
+                            <td>@examClass.teacher</td>
+                        }
                     </tr>
                     <tr>
                         <td scope="row">Zahl</td>
-                        <td>10</td>
-                        <td>14</td>
-                        <td>12</td>
-                        <td>10</td>
-                        <td>9</td>
+                        @foreach (var examClass in table.classes)
+                        {
+                            <td>@examClass.count</td>
+                        }
                     </tr>
                     <tr>
                         <td scope="row">Raum</td>
-                        <td>A1.11</td>
-                        <td>A2.22</td>
-                        <td colspan="2">A2.13</td>
-                        <td>C0.17</td>
+                        @foreach (var examClass in table.classes)
+                        {
+                            <td>@examClass.room</td>
+                        }
                     </tr>
                 </tbody>
             </table>
+            }
         </div>
     }
 
@@ -105,9 +104,11 @@
         <hr />
 
         <div class="vtp-table">
-            <h4>Lehrer 1</h4>
+            @foreach (var table in Model.representations.teacherTables)
+            {
+                <h4>@table.name</h4>
 
-            <table class="table table-sm table-bordered table-striped">
+                <table class="table table-sm table-bordered table-striped">
                 <thead>
                     <tr>
                         <th scope="col">Stunde</th>
@@ -118,107 +119,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1 <span class="badge badge-primary">@Localizer["Helper.New"]</span></th>
-                        <td>KURS1</td>
-                        <td>/</td>
-                        <td>A0.00</td>
-                        <td>EVA</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>KURS2</td>
-                        <td>/</td>
-                        <td>A1.11</td>
-                        <td>EVA</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>KURS3</td>
-                        <td>/</td>
-                        <td>A2.22</td>
-                        <td>EVA</td>
-                    </tr>
+                    @foreach (var teacherHour in table.hours)
+                    {
+                        <tr>
+                            <th scope="row">@teacherHour.hour</th>
+                            <td>@teacherHour.className</td>
+                            <td>@teacherHour.representingTeacherName</td>
+                            <td>@teacherHour.room</td>
+                            <td>@teacherHour.note</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
-        </div>
-
-        <div class="vtp-table">
-            <h4>Lehrer 2</h4>
-
-            <table class="table table-sm table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Stunde</th>
-                        <th scope="col">Kurs</th>
-                        <th scope="col">Vertretender Lehrer</th>
-                        <th scope="col">Raum</th>
-                        <th scope="col">Bemerkung</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>KURS1</td>
-                        <td>/</td>
-                        <td>A0.00</td>
-                        <td>EVA</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>KURS2</td>
-                        <td>/</td>
-                        <td>A1.11</td>
-                        <td>EVA</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>KURS3</td>
-                        <td>/</td>
-                        <td>A2.22</td>
-                        <td>EVA</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="vtp-table">
-            <h4>Lehrer 3 <span class="badge badge-primary">@Localizer["Helper.New"]</span></h4>
-
-            <table class="table table-sm table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Stunde</th>
-                        <th scope="col">Kurs</th>
-                        <th scope="col">Vertretender Lehrer</th>
-                        <th scope="col">Raum</th>
-                        <th scope="col">Bemerkung</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>KURS1</td>
-                        <td>/</td>
-                        <td>A0.00</td>
-                        <td>EVA</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>KURS2</td>
-                        <td>/</td>
-                        <td>A1.11</td>
-                        <td>EVA</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>KURS3</td>
-                        <td>/</td>
-                        <td>A2.22</td>
-                        <td>EVA</td>
-                    </tr>
-                </tbody>
-            </table>
+            }
+            
         </div>
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using SchoolBoard.Models;
+using SchoolBoard.Services;
 using System;
 
 namespace SchoolBoard.Pages
@@ -10,6 +12,10 @@ namespace SchoolBoard.Pages
         public string dayOfWeek;
         public string dayOfMonth;
         public string dateOfYear;
+
+        public Alerts alerts;
+        public Exams exams;
+        public Representations representations;
 
         private readonly ILogger<IndexModel> _logger;
 
@@ -33,6 +39,8 @@ namespace SchoolBoard.Pages
                     SetDate(1);
                     break;
             }
+
+            LoadData(); // Get school data from service
         }
 
         private void SetDate(int addDays = 0)
@@ -43,6 +51,17 @@ namespace SchoolBoard.Pages
             dayOfWeek = datetime.ToString("dddd");
             dayOfMonth = datetime.ToString("dd. MMMM");
             dateOfYear = datetime.ToShortDateString();
+        }
+
+        private void LoadData()
+        {
+            // Switch this to your custom service to change the data on the web page
+            DemoService service = new DemoService();
+
+            // only get the needed information for this board
+            if (Convert.ToBoolean(Configuration["Board:Alerts"])) { alerts = service.GetAlerts(); }
+            if (Convert.ToBoolean(Configuration["Board:Exams"])) { exams = service.GetExams(); }
+            if (Convert.ToBoolean(Configuration["Board:Representations"])) { representations = service.GetRepresentations(); }
         }
     }
 }
