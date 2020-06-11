@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using SchoolBoard.Helpers;
 using SchoolBoard.Models;
 using SchoolBoard.Services;
 using System;
@@ -46,7 +47,7 @@ namespace SchoolBoard.Pages
         private void SetDate(int addDays = 0)
         {
             DateTime datetime = new DateTime();
-            datetime = DateTime.Now;
+            datetime = TimeHelper.GetLocalTime(Configuration["Board:Timezone"]);
             if (addDays != 0) { datetime = datetime.AddDays(addDays); }
             dayOfWeek = datetime.ToString("dddd");
             dayOfMonth = datetime.ToString("dd. MMMM");
