@@ -1,6 +1,6 @@
 # SchoolBoard 🖥️
 
-> ⚠ This project will not be further developed or mainained! ⚠
+> ⚠ This project will not be further developed or maintained! ⚠
 
 Digital Signage WebApp which shows current information about missing classes and other events at the school.
 If you want to use something like this, feel free to fork it and make your own version to suit your needs.
