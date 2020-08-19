@@ -1,14 +1,9 @@
 # SchoolBoard 🖥️
-Digital Signage WebApp which shows current information about missing classes and other events about our school.
+
+> ⚠ This project will not be further developed or mainained! ⚠
+
+Digital Signage WebApp which shows current information about missing classes and other events at the school.
 If you want to use something like this, feel free to fork it and make your own version to suit your needs.
-As this project is for [our school](https://www.pelizaeus.de/) in Germany, the entire UI is in German too.
-
-Please visit the [wiki](https://github.com/Lukas34/SchoolBoard/wiki) for detailed guides, instructions and other resources.
-
-# Development Server 🌐
-See a preview with demo content of the current build on [schoolboarddev.azurewebsites.net](https://schoolboarddev.azurewebsites.net).
-
-The development server follows the master branch and automatically updates once commits are pushed. Because it's just a free server, it may take up to 20 seconds for it to respond if it has not been accessed recently.
 
 # Build and Develop 🧪
 The WebApp is written in C# and is dotnet core based so make sure you have the .NET Core SDK installed. You can get it [here](https://dotnet.microsoft.com/download).
@@ -43,7 +38,6 @@ The web interface is currently disabled and might be added later down the line.
 
 Btw: Since the configuration is [managed by ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1), you can use the [JSON configuration provider](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1#jcp) for different production and development coonfigurations by creating a new appsettings.`Environment`.json file (e.g. `appsettings.Development.json`) and put in the configuration changes. You can also use environmental variables for the config which override `appsettings.json`.
 
-# Personal usage & Contributions 🧩
+# Personal Usage 🧩
 
 Feel free to build something yourself upon this project to suit your needs.
-Pull requests are always welcome too.
