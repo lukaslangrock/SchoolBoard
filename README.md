@@ -32,7 +32,7 @@ The web interface is currently disabled and might be added later down the line.
 2.  Edit the `appsettings.json` file in any text editor. Make sure to use the correct formatting. The app might crash if you store non-valid json code in there.
 3.  Save and just refresh the page (or wait 5 minutes and let the auto refresh to it's thing). All settings can be updated during runtime and do not require a restart.
 
-[How to configure the appsettings.json file](https://github.com/Lukas34/SchoolBoard/wiki/Configure-appsettings.json).
+[How to configure the appsettings.json file](https://github.com/LukasLangrock/SchoolBoard/wiki/Configure-appsettings.json).
 
 *If you are starting the compiled project from the command line using `dotnet ./SchoolBoard.dll`, your `appsettings.json` file is located in `\WebApp\SchoolBoard\bin\Debug\netcoreapp3.1` or `\WebApp\SchoolBoard\bin\Release\netcoreapp3.1`, depending on your build configuration.*
 
